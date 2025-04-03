@@ -19,7 +19,7 @@ public class ContextController {
 		mav = new ModelAndView();
 	}
 	//3주차 실습
-	@GetMapping
+	@GetMapping("/createBean")
 	public ModelAndView beanTest() {
 		//컨텍스트 초기화
 		xmlContext.setConfigLocation("classpath:static/xml/Ex1.xml");
