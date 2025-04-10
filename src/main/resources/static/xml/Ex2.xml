@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="xmlSms" class="com.Lect.week03.SmsSender"/>
+    <bean id="xmlunit" class="com.Lect.week03.WorkUnit" scope="prototype"/>
+    <bean name="service" class="com.Lect.week03.LombokService">
+        <constructor-arg>  <ref bean="xmlSms"/> </constructor-arg>
+        <constructor-arg> <value type="long">30000</value></constructor-arg>
+
+        <property name="unit"><ref bean="xmlunit"/> </property>
+        <property name="msg"> <value>롬복을 활용하는 클래스를 사용!! </value></property>
+
+    </bean>
+
+
+</beans>
