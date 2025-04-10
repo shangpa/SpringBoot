@@ -59,4 +59,14 @@ public class DIController {
 		mav.setViewName("week03/autoDIView");
 		return mav;
 	}
+
+	@GetMapping("/commonDI")
+	public ModelAndView useCommon(ModelAndView mav) {
+		CommonService service = (CommonService)context.getBean("commonService");
+		service.setDefaultValue(30);
+		service.setPeriodTime(20);
+		mav.addObject("obj",service);
+		mav.setViewName("week03/commonDIView");
+		return mav;
+	}
 }

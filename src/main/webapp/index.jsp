@@ -20,6 +20,7 @@
 		<li><a href="lombok">Lombok을 이용한 DI 예제(MVC)</a></li>
 		<li><a href="xmlDI">xml을 이용한 DI 예제(MVC)</a></li>
 		<li><a href="autoDI">자동 설정 방식의 DI 예제(MVC)</a></li>
+		<li><a href="commonDI">공통 의존성 DI 예제(MVC)</a></li>
 	</ul>
 </body>
 </html>
