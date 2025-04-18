@@ -31,6 +31,10 @@
 		<li><a href="scopeBean">빈 범위 설정 예제</a></li>
 		<li><a href="useDifferentScope">서로 다른 범위 빈 사용</a></li>
 		<li><a href="objectFactoryBeanTest">서로 다른 범위 빈 사용</a></li>
+		<li><a href="post&pre">커스텀 메서드 사용 (빈 객체 생성, 소멸시)</a></li>
+		<li><a href="awareInterfaceEx"> Aware 인터페이스 사용</a></li>
+		<li><a href="externalConfigEx"> 외부 properties 사용</a></li>
+
 	</ul>
 </body>
 </html>

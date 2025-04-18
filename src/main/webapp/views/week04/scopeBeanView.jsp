@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="EUC-KR">
-    <title>week03/scopeBeanView.jsp</title>
+    <title>week04/scopeBeanView.jsp</title>
 </head>
 <body>
 <c:forEach var="smsArray" items="${scopeBeanArray}" varStatus="status">

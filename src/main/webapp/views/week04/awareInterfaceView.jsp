@@ -6,14 +6,12 @@
 <html>
 <head>
     <meta charset="EUC-KR">
-    <title>week04/differentScopeView.jsp</title>
+    <title>week04/awareInterfaceView.jsp</title>
 </head>
 <body>
-<c:forEach var="unitArray" items="${scopeBeanArray}" varStatus="status">
-    <c:forEach var="unit" items="${unitArray}" varStatus="status">
-        ${status.count} : <c:out value="${unit}"/><br>
+<h3>등록된 빈 목록</h3>
+    <c:forEach var="name" items="${beanNames}" varStatus="status">
+        ${status.count} : <c:out value="${name}"/><br>
     </c:forEach>
-    <c:out value="====================="/> <br>
-</c:forEach>
 </body>
 </html>
