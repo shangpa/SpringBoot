@@ -39,6 +39,8 @@
 	<h3>5주차 실습</h3>
 	<ul>
 		<li><a href="beforeAOP">@Before 어노테이션 사용</a></li>
+		<li><a href="afterAOP">메서드 실행후 어노테이션 사용</a></li>
+		<li><a href="aroundAOP">메서드 실행전/후 어노테이션 사용</a></li>
 	</ul>
 </body>
 </html>

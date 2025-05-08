@@ -1,8 +1,10 @@
 package com.Lect.week05;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.util.Scanner;
 
 @Aspect
 @Component
@@ -29,5 +31,44 @@ public class AdviceAspect {
     private boolean checkAuthentication(){
         double value = Math.random();
         return value > 0.5;
+    }
+
+    @Pointcut("execution(* com.Lect..*(..))")
+    private void pointcutEXP() {}
+    @AfterReturning(pointcut = "pointcutEXP()",returning = "result")
+    public void LogAfterReturning(Object result) {
+        System.out.println("[Log] 메서드가 정상적으로 종료되엇습니다.");
+        System.out.println("[Log] 반환값 : " + result);
+    }
+    @AfterThrowing(pointcut = "pointcutEXP()",throwing = "authException")
+    public void exceptionProcess(Throwable authException) {
+        System.out.println("================");
+        System.out.println("예외발생!!, 예외= "+authException.getMessage());
+    }
+    @After("pointcutEXP()")
+    public void LogAfter() {
+        System.out.println("[INFO] 메서드 실행 후 처리되었습니다");
+    }
+
+    @Around("execution(* com.Lect.week05.ExAOPService.check(..))")
+    public Object checkPermission(ProceedingJoinPoint joinPoint)throws Throwable {
+        Long startTime = System.currentTimeMillis();
+        Object[] args = joinPoint.getArgs();
+        System.out.println("[Around] 시작 시간 : "+startTime);
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("사용자 권한 : ");
+
+        args[0] = in.nextLine();
+        Object result = joinPoint.proceed(args);//대상메서드 실행, 매개변수값을 변경
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("[Around] 메서드 실행 시간 : "+(endTime-startTime)+"ms");
+
+        String methodName = joinPoint.getSignature().getName();
+        result= "["+methodName+"] 메서드에 대한"+result;
+        return result;
+
+
     }
 }
