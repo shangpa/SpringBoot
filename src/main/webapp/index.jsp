@@ -34,7 +34,11 @@
 		<li><a href="post&pre">커스텀 메서드 사용 (빈 객체 생성, 소멸시)</a></li>
 		<li><a href="awareInterfaceEx"> Aware 인터페이스 사용</a></li>
 		<li><a href="externalConfigEx"> 외부 properties 사용</a></li>
+	</ul>
 
+	<h3>5주차 실습</h3>
+	<ul>
+		<li><a href="beforeAOP">@Before 어노테이션 사용</a></li>
 	</ul>
 </body>
 </html>
