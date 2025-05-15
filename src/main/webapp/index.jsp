@@ -42,5 +42,12 @@
 		<li><a href="afterAOP">메서드 실행후 어노테이션 사용</a></li>
 		<li><a href="aroundAOP">메서드 실행전/후 어노테이션 사용</a></li>
 	</ul>
+	<h3>6주차 실습</h3>
+	<ul>
+		<li><a href="usingDataSource">DataSource 타입 객체 사용</a></li>
+		<li><a href="simpleQuery">jdbcTemplate.query()사용</a></li>
+		<li><a href="parameterQuery">jdbcTemplate.query()사용2</a></li>
+
+	</ul>
 </body>
 </html>
