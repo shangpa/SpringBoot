@@ -47,6 +47,10 @@
 		<li><a href="usingDataSource">DataSource 타입 객체 사용</a></li>
 		<li><a href="simpleQuery">jdbcTemplate.query()사용</a></li>
 		<li><a href="parameterQuery">jdbcTemplate.query()사용2</a></li>
+		<li><a href="listQuery">jdbcTemplate.queryForList()</a></li>
+		<li><a href="updateQuery">jdbcTemplate.updateQuery()</a></li>
+		<li><a href="batchUpdateArray">jdbcTemplate.batchUpdateArray() 사용1</a></li>
+		<li><a href="batchUpdateSetter">jdbcTemplate.batchUpdateArray() 사용2</a></li>
 
 	</ul>
 </body>

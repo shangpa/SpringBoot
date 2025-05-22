@@ -25,17 +25,14 @@ public class DBServiceController {
         Statement stmt = null;
         Connection conn = null;
         String sql;
-        try{
+        try {
             conn = dataSource.getConnection();
             stmt = conn.createStatement();
-            sql = "create table MEMBER(ID int auto_increment primary key , "
-                    + "EMAIL varchar(255) , PASSWORD varchar(255) , "
-                    + "NAME varchar(255) , REGDATE datetime)";
-            stmt.executeUpdate(sql);
+
 
             for (int i = 1; i <= 5; i++) {
                 sql = "insert into MEMBER(EMAIL,PASSWORD,NAME,REGDATE)"
-                        +"values('virus"+i+"@virus.net' , '1234' , 'std" + i +"', now())";
+                        + "values('virus" + i + "@virus.net' , '1234' , 'std" + i + "', now())";
                 stmt.executeUpdate(sql);
             }
         } catch (SQLException e) {
@@ -51,15 +48,43 @@ public class DBServiceController {
     private MemberService memberService; //인젝션
 
     @GetMapping("/simpleQuery")
-    public ModelAndView simpleQuery(ModelAndView mav){
-        mav.addObject("members",memberService.getMembers());
+    public ModelAndView simpleQuery(ModelAndView mav) {
+        mav.addObject("members", memberService.getMembers());
         mav.setViewName("week06/membersView");
         return mav;
     }
 
     @GetMapping("/parameterQuery")
-    public ModelAndView parameterQuery(ModelAndView mav){
-        mav.addObject("members",memberService.getMembersUsingParameter());
+    public ModelAndView parameterQuery(ModelAndView mav) {
+        mav.addObject("members", memberService.getMembersUsingParameter());
+        mav.setViewName("week06/membersView");
+        return mav;
+    }
+
+    @GetMapping("/listQuery")
+    public ModelAndView listQuery(ModelAndView mav) {
+        mav.addObject("memberList", memberService.getMembersUsingMap());
+        mav.setViewName("week06/memberListView");
+        return mav;
+    }
+
+    @GetMapping("/updateQuery")
+    public ModelAndView updateQuery(ModelAndView mav) {
+        mav.addObject("members", memberService.getUpdateMembers());
+        mav.setViewName("week06/membersView");
+        return mav;
+    }
+
+    @GetMapping("/batchUpdateArray")
+    public ModelAndView batchUpdateArray(ModelAndView mav) {
+        mav.addObject("members", memberService.getBatchUpdateArray());
+        mav.setViewName("week06/membersView");
+        return mav;
+    }
+
+    @GetMapping("/batchUpdateSetter")
+    public ModelAndView batchUpdateSetter(ModelAndView mav) {
+        mav.addObject("members", memberService.getBatchUpdateSetter());
         mav.setViewName("week06/membersView");
         return mav;
     }
