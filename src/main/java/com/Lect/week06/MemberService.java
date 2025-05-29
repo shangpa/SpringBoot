@@ -91,4 +91,52 @@ public class MemberService {
         memberRepos.batchInsertMembersSetter(sql, memberData);
         return  getMembers();
     }
+
+    public List<Member> getKeyHolder() {
+        // DB에 새로운 Member를 insert하면서, 자동 생성된 id 값을 받아와서 출력하고,
+        // 전체 회원 목록을 조회해서 반환하는 메서드
+
+        String sql = "insert into MEMBER (EMAIL,PASSWORD,NAME,REGDATE) values(?,?,?,?)";
+        // 실행할 insert 쿼리 작성. (파라미터로 물음표 ?를 사용해서 값 바인딩)
+
+        Member member = new Member("virus1@virus.com", "3456", "홍길동", LocalDateTime.now());
+
+        long KeyHolder = memberRepos.insertMember(member,sql);
+        // 위에서 만든 member를 DB에 저장하고, 자동 생성된 id 값을 받아온다.
+        // memberRepos는 insertMember 함수를 가진 저장소(Repository) 객체
+
+        System.out.println("자동 생성된 값 :" + KeyHolder);
+        // DB에서 생성된 id(PK 값)를 콘솔에 출력
+
+        return getMembers();
+        // 전체 회원 목록을 다시 조회해서 반환
+    }
+
+    public List<Member> transactionProcess() {
+        // 트랜잭션(rollback 테스트 포함) 처리 후, 전체 회원 목록을 반환하는 메서드
+
+        try {
+            Member member = new Member("홍길동@virus.com", "1234", "홍길동", LocalDateTime.now());
+            // 새로 추가할 Member 객체 생성 (이메일, 비번, 이름, 등록시간)
+
+            memberRepos.changePassword(member, "5678");
+            // changePassword 메서드 실행:
+            // 1. member를 insert
+            // 2. 비밀번호/이름 update
+            // (여기서 일부러 쿼리 오타로 롤백 발생 가능!)
+        } catch (Exception e) {
+            System.out.println("Transaction rolled back" + e.getMessage());
+            // 만약 changePassword 과정에서 Exception 발생하면
+            // "Transaction rolled back" 메시지와 에러 원인 출력
+            // (실제로 쿼리 오타 때문에 rollback 일어남)
+        }
+
+        String sql = "select * from MEMBER";
+        // 전체 회원 데이터를 조회할 select 쿼리문 준비
+
+        return memberRepos.selectAll(sql);
+        // 현재 MEMBER 테이블의 모든 데이터를 조회해서 반환
+    }
+
+
 }

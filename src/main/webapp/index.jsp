@@ -51,6 +51,8 @@
 		<li><a href="updateQuery">jdbcTemplate.updateQuery()</a></li>
 		<li><a href="batchUpdateArray">jdbcTemplate.batchUpdateArray() 사용1</a></li>
 		<li><a href="batchUpdateSetter">jdbcTemplate.batchUpdateArray() 사용2</a></li>
+		<li><a href="keyHolder">keyHolder&PreparedStatement 사용</a></li>
+		<li><a href="transactionUpdate">@TransactionUpdate 사용</a></li>
 
 	</ul>
 </body>
