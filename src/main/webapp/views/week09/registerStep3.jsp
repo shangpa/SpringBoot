@@ -13,7 +13,7 @@
 <strong>이름 : ${registerRequest.name}</strong><br>
 <strong>암호 : ${registerRequest.password}</strong><br>
 <strong>확인 : ${registerRequest.confirmPassword}</strong><br>
-<br><h3>회원가입을 완려했습니다.</h3><br>
+<br><h3>회원가입을 완료했습니다.</h3><br>
 <p><a href=" <c:url value='/main'/>">첫화면이동</a> </p>
 </body>
 </html>

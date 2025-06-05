@@ -1,23 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-         pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="EUC-KR">
-    <title>È¸¿ø°¡ÀÔ</title>
+    <title>íšŒì›ê°€ìž…</title>
 </head>
 <body>
-<h3>¸â¹ö ¸®½ºÆ®</h3>
-<h2>¾à°ü</h2>
-<p>¾à°ü ³»¿ë</p>
+<h3>ë©¤ë²„ ë¦¬ìŠ¤íŠ¸</h3>
+<h2>ì•½ê´€</h2>
+<p>ì•½ê´€ ë‚´ìš©</p>
 <form action="/regist/step2" method="post">
     <input type="hidden" name="view" value="registerStep2">
     <label>
-        <input type="checkbox" name="agree" value="true">¾à°üµ¿ÀÇ
+        <input type="checkbox" name="agree" value="true">ì•½ê´€ë™ì˜
     </label>
-    <input type="submit" value="´ÙÀ½ ´Ü°è"/>
-    <!-- ¸Þ½ÃÁö°¡ Á¸ÀçÇÏ¸é Ãâ·Â -->
+    <input type="submit" value="ë‹¤ìŒ ë‹¨ê³„"/>
+    <!-- ë©”ì‹œì§€ê°€ ì¡´ìž¬í•˜ë©´ ì¶œë ¥ -->
     <c:if test="${not empty message}">
         <p style="color:blue;">${message}</p>
     </c:if>

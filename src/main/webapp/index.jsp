@@ -53,7 +53,11 @@
 		<li><a href="batchUpdateSetter">jdbcTemplate.batchUpdateArray() 사용2</a></li>
 		<li><a href="keyHolder">keyHolder&PreparedStatement 사용</a></li>
 		<li><a href="transactionUpdate">@TransactionUpdate 사용</a></li>
-
+	</ul>
+	<h3>9주차 실습</h3>
+	<ul>
+		<li><a href="regist/step/1">요청파라미터&커맨드객체&리다이렉션트 실습</a></li>
+		<li><a href="regist/initCommand">커맨드 객체 초기화</a></li>
 	</ul>
 </body>
 </html>

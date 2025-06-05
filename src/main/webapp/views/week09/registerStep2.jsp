@@ -8,10 +8,8 @@
     <title>회원가입</title>
 </head>
 <body>
-<h3>멤버 리스트</h3>
-<h2>약관</h2>
-<p>약관 내용</p>
-<form action="/register/step3" method="post">
+<h2>회원 정보 입력</h2>
+<form action="/regist/step3" method="post">
     <!-- name="email" : 서버에 폼 데이터를 전송할 때 사용할 파라미터 이름 -->
     <!-- id="email" : HTML 요소의 고유 식별자이며, JavaScript나 Css에서 참조할 때 사용 -->
     <p>
