@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class AnswerData {
+public class AnsweredData {
     private List<String> responses;
     private Respondent res;
 }

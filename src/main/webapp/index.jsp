@@ -58,6 +58,12 @@
 	<ul>
 		<li><a href="regist/step/1">요청파라미터&커맨드객체&리다이렉션트 실습</a></li>
 		<li><a href="regist/initCommand">커맨드 객체 초기화</a></li>
+		<li><a href="regist/survey">리스프 프로퍼티실습</a></li>
+	</ul>
+	<h3>10주차 실습</h3>
+	<ul>
+		<li><a href="message">메시지 태그 실습</a></li>
+		<li><a href="message">커맨드 객체 검증 실습</a></li>
 	</ul>
 </body>
 </html>

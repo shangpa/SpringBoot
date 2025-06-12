@@ -12,8 +12,9 @@
     <form method="post">
         <c:forEach var="q" items="${questions}" varStatus="status">
             <p>
+                ${status.index+1}.${q.title}<br>
                 <c:if test="${q.choice}">
-                    <c:forEach var="option" items="${q.option}">
+                    <c:forEach var="option" items="${q.options}">
                         <label><input type="radio" name="responses[${status.index}]" value="${option}">${option} </label>
                     </c:forEach>
                 </c:if>
